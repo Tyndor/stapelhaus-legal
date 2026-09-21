@@ -1,0 +1,28 @@
+# Diese Seiten sollen erreichbar, aber nicht auffindbar sein.
+#
+# Wichtig: KEIN pauschales "Disallow: /". Eine Sperre hier verhindert nur das
+# Lesen — indexiert werden koennte die Adresse trotzdem, ueber Verweise von
+# anderswo, und die noindex-Angabe in den Seiten wuerde nie gelesen. Deshalb:
+# normales Crawlen erlaubt, die Seiten selbst tragen "noindex".
+User-agent: *
+Allow: /
+
+# Kein Einsammeln fuer KI-Trainingsdaten. Freiwillig, aber die serioesen
+# Betreiber halten sich daran.
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /

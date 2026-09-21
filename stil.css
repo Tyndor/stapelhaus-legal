@@ -1,0 +1,179 @@
+/* Weiche Bauklötze, passend zum Ton der App — Material 3 in Pastell.
+   Keine externen Schriften und keine Skripte: Die Seite lädt NICHTS nach.
+   Genau das sichert Abschnitt 12 der Datenschutzerklärung zu, und eine
+   Schrift von fremdem Server wäre ausgerechnet auf dieser Seite der falsche
+   Anfang — der Besuch stünde dann in einem zweiten Protokoll.
+
+   Die Werte stammen aus apps/stapelhaus/lib/core/theme/ (app_theme.dart für
+   die Farben, tokens.dart für die Radien). Wer sie dort ändert, ändert sie
+   hier mit; verbunden sind die beiden nur durch diesen Satz. */
+:root {
+  --grund: #fff8f0;      /* surface */
+  --karte: #ffffff;      /* surfaceContainer */
+  --tinte: #2d2a32;      /* onSurface */
+  --tinte-leise: #6e6975;/* onSurfaceVariant */
+  --korallen: #ff7a59;   /* primary */
+  --himmel: #6ec1e4;     /* sky */
+  --himmel-hauch: #ddf1f9;
+  --minze-hauch: #e3f5ec;
+  --butter-hauch: #fff1cf;
+  --erde: #e9dccb;
+  --kante: rgba(45, 42, 50, 0.08); /* outlineVariant */
+
+  --rund-klein: 8px;
+  --rund-mittel: 16px;
+  --rund-gross: 24px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 28px 20px 64px;
+  background: var(--grund);
+  color: var(--tinte);
+  /* Nunito steht vorn: Wer sie auf dem Gerät hat, sieht das Schriftbild der
+     App. Alle anderen bekommen eine verwandte runde Schrift — nachgeladen
+     wird keine. */
+  font-family: Nunito, "Nunito Sans", "Trebuchet MS", "Segoe UI", system-ui,
+    -apple-system, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+main { max-width: 44rem; margin: 0 auto; }
+
+/* Der Kopf ist eine Karte, wie alles Eigenständige in der App: eigener Grund,
+   runde Ecken, keine Schatten (die Ausstattung setzt elevation überall auf 0). */
+header {
+  background: var(--karte);
+  border: 1px solid var(--kante);
+  border-radius: var(--rund-gross);
+  padding: 22px 24px;
+  margin-bottom: 28px;
+}
+
+.rubrik {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--korallen);
+}
+
+h1 {
+  font-size: 30px;
+  line-height: 1.15;
+  font-weight: 800;
+  margin: 4px 0 0;
+}
+
+h2 {
+  font-size: 21px;
+  font-weight: 800;
+  margin: 36px 0 10px;
+}
+
+/* Dritte Ebene für den Unterabschnitt zu App Tracking Transparency. Ohne
+   eigene Regel nähme der Browser seine Vorgabe — größer als der Fließtext,
+   aber mit fremden Abständen. */
+h3 {
+  font-size: 17px;
+  font-weight: 800;
+  margin: 26px 0 8px;
+}
+
+a { color: var(--korallen); }
+a:hover { text-decoration-thickness: 2px; }
+
+strong { font-weight: 800; }
+
+ul { padding-left: 1.3em; }
+li { margin: 6px 0; }
+
+/* Die Anschrift: eine Karte in Erdton — dieselbe Rolle wie der Sockel des
+   Hauses in der App. `pre-line` hält die Zeilen der Markdown-Quelle. */
+address {
+  font-style: normal;
+  background: var(--himmel-hauch);
+  border: 1px solid var(--kante);
+  border-radius: var(--rund-mittel);
+  padding: 16px 18px;
+  white-space: pre-line;
+  font-size: 16px;
+}
+
+.stand {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--tinte-leise);
+  margin: 10px 0 0;
+}
+
+/* Der hervorgehobene Kernsatz — in der App wäre es eine getönte Karte. */
+.merksatz {
+  background: var(--butter-hauch);
+  border: 1px solid var(--kante);
+  border-radius: var(--rund-mittel);
+  padding: 14px 18px;
+  margin: 18px 0;
+}
+
+/* Technische Bezeichner im Fließtext (etwa allowBackup="false"). */
+code {
+  font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  font-size: 0.9em;
+  background: var(--minze-hauch);
+  border-radius: var(--rund-klein);
+  padding: 1px 5px;
+}
+
+footer {
+  margin-top: 44px;
+  padding-top: 16px;
+  border-top: 1px solid var(--kante);
+  font-size: 14px;
+  color: var(--tinte-leise);
+}
+
+nav a {
+  display: inline-block;
+  margin: 0 18px 8px 0;
+  font-weight: 700;
+}
+
+/* Die Übersicht: drei Klötze übereinander, wie der Stapel in der App. */
+.stapel { list-style: none; padding: 0; margin: 24px 0 0; }
+
+.stapel li { margin: 0 0 12px; }
+
+.stapel a {
+  display: block;
+  background: var(--karte);
+  border: 1px solid var(--kante);
+  border-radius: var(--rund-mittel);
+  padding: 16px 18px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.stapel a:hover { background: var(--himmel-hauch); }
+
+/* **Dunkelmodus gehört zu Stapelhaus**, anders als zu Bürofauna: Die App
+   bringt ihn mit, also bringt ihn die Seite mit. Die Werte sind die der
+   dunklen Ausstattung. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --grund: #1f1d24;
+    --karte: #2a2731;
+    --tinte: #f2efea;
+    --tinte-leise: #a9a4b0;
+    --korallen: #ff7a59;
+    --himmel: #589ab6;
+    --himmel-hauch: #2b3e48;
+    --minze-hauch: #2b4039;
+    --butter-hauch: #453d2a;
+    --erde: #3a322a;
+    --kante: rgba(242, 239, 234, 0.08);
+  }
+}
