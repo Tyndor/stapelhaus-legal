@@ -95,7 +95,19 @@ h3 {
   margin: 26px 0 8px;
 }
 
-a { color: var(--korallen); }
+/* **Verweise brechen IMMER**, und zwar an jeder Stelle (Nutzer-Befund am
+   Telefon, 2026-09-22 — es war die Samsung-Adresse). `break-word` am Körper
+   bricht ein Wort erst, wenn es allein nicht in eine Zeile passt, und lässt
+   dem Browser dabei Spielraum; `anywhere` nimmt ihn. Die Adressen hier sind
+   der einzige Text ohne Leerzeichen, also ist das die passende Stelle:
+   Fliesstext bleibt unangetastet.
+
+   Hier stehen sie MIT „https://" und sind damit noch länger als bei
+   Bürofauna — derselbe Fehler, nur grösser. */
+a {
+  color: var(--korallen);
+  overflow-wrap: anywhere;
+}
 a:hover { text-decoration-thickness: 2px; }
 
 strong { font-weight: 800; }
