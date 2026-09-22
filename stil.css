@@ -39,6 +39,18 @@ body {
     -apple-system, sans-serif;
   font-size: 17px;
   line-height: 1.6;
+  /* **Lange Adressen brechen um, statt die Seite breit zu machen**
+     (Nutzer-Befund am Telefon, 2026-09-22): Rechts stand eine Handbreit
+     leerer Grund. Das war keine Lücke, sondern ein Überlauf — die längste
+     Adresse hier ist 88 Zeichen lang und damit auf einem 360 dp breiten Bild
+     gut doppelt so breit wie der Satzspiegel. Wo ein Wort breiter ist als die
+     Zeile, scrollt die Seite waagerecht; der Grund des Körpers endet trotzdem
+     am Bildrand, und rechts daneben bleibt es leer.
+
+     `break-word` statt `anywhere`: Es bricht nur, was allein nicht in eine
+     Zeile passt — gewöhnliche Wörter bleiben unangetastet. Die Eigenschaft
+     vererbt sich, eine Zeile am Körper genügt also. */
+  overflow-wrap: break-word;
 }
 
 main { max-width: 44rem; margin: 0 auto; }
