@@ -201,3 +201,13 @@ nav a {
     --kante: rgba(242, 239, 234, 0.08);
   }
 }
+
+/* Sprachumschalter oben rechts im Kopf jeder Seite (2026-09-26). Die
+   aktuelle Sprache ist kein Link, sondern hervorgehoben. */
+.sprachen {
+  float: right;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--tinte-leise);
+}
+.sprachen [aria-current] { color: var(--tinte); font-weight: 700; }
