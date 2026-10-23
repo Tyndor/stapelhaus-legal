@@ -16,10 +16,14 @@ Die Quelle sind die Markdown-Dateien im App-Repo, nicht diese Seiten:
 |---|---|
 | `datenschutz.html` | `apps/stapelhaus/legal/privacy_de.md` |
 | `impressum.html` | `apps/stapelhaus/legal/imprint_de.md` |
+| `en/…` | `…_en.md` |
+| `nl/…` | `…_nl.md` (seit dem 2026-10-23; Flandern liest dieselbe Seite) |
 
 **Übertragen wird von Hand, nicht erzeugt.** Wer den Text dort ändert, ändert
 ihn hier mit — sonst laufen App-Fassung und Web-Fassung still auseinander. Vor
-jedem Store-Upload gehören die beiden nebeneinandergelegt.
+jedem Store-Upload gehören die beiden nebeneinandergelegt. Die niederländischen Seiten
+sind am 2026-10-23 einmal aus dem Markdown gesetzt worden; seither gilt für sie
+dasselbe.
 
 **Ein Abschnitt steht nur hier:** „12. Diese Website". Er erklärt, was GitHub
 beim Aufruf dieser Seiten verarbeitet. In der Markdown-Datei ist er mit
